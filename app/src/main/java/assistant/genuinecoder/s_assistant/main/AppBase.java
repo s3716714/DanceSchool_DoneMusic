@@ -66,10 +66,14 @@ public class AppBase extends AppCompatActivity {
             basicFields.add("NOTES");
             basicFields.add("PROFILE");
             basicFields.add("COMMUNICATE");
+            basicFields.add("SONGS");
+            basicFields.add("FaceBook");
         }
         if (accessLevel.equals("User")) {
             basicFields.add("COMMUNICATE");
             basicFields.add("NOTES");
+            basicFields.add("SONGS");
+            basicFields.add("FaceBook");
         }
 
 

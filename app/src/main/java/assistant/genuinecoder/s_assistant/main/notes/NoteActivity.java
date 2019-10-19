@@ -49,7 +49,7 @@ public class NoteActivity extends AppCompatActivity implements ListView.OnItemCl
             }
         });
 
-        listView = (ListView) findViewById(R.id.noteList);
+        listView = (ListView) findViewById(R.id.listview);
         loadNotes();
         listView.setOnItemClickListener(this);
         listView.setOnItemLongClickListener(this);

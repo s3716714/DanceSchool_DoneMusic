@@ -37,11 +37,13 @@ import java.util.ArrayList;
 import assistant.genuinecoder.s_assistant.R;
 import assistant.genuinecoder.s_assistant.main.AppBase;
 import assistant.genuinecoder.s_assistant.main.Login.Login;
+import assistant.genuinecoder.s_assistant.main.Songs.NumbersActivity;
 import assistant.genuinecoder.s_assistant.main.attendance.AttendanceActivity;
 import assistant.genuinecoder.s_assistant.main.communicate.communicateActivity;
 import assistant.genuinecoder.s_assistant.main.notes.NoteActivity;
 import assistant.genuinecoder.s_assistant.main.profile.ProfileActivity;
 import assistant.genuinecoder.s_assistant.main.schedule.Scheduler;
+import assistant.genuinecoder.s_assistant.main.web.Web;
 
 public class GridAdapter extends BaseAdapter {
     public static Activity activity;
@@ -120,7 +122,47 @@ public class GridAdapter extends BaseAdapter {
             anim.setRepeatCount(Animation.INFINITE);
             imageView.startAnimation(anim);
 
-        } else if (names.get(position).toString().equals("SCHEDULER")) {
+        }else if (names.get(position).toString().equals("SONGS")) {
+            imageView.setImageResource(R.drawable.music2);
+            v.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent launchinIntent = new Intent(activity, NumbersActivity.class);
+                    activity.startActivity(launchinIntent);
+                }
+            });
+            Animation anim = new ScaleAnimation(
+                    0.95f, 1f, // Start and end values for the X axis scaling
+                    0.95f, 1f, // Start and end values for the Y axis scaling
+                    Animation.RELATIVE_TO_SELF, 0.5f, // Pivot point of X scaling
+                    Animation.RELATIVE_TO_SELF, 0.5f); // Pivot point of Y scaling
+            anim.setFillAfter(true); // Needed to keep the result of the animation
+            anim.setDuration(2000);
+            anim.setRepeatMode(Animation.INFINITE);
+            anim.setRepeatCount(Animation.INFINITE);
+            imageView.startAnimation(anim);
+
+    }else if (names.get(position).toString().equals("FaceBook")) {
+        imageView.setImageResource(R.drawable.facebook);
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent launchinIntent = new Intent(activity, Web.class);
+                activity.startActivity(launchinIntent);
+            }
+        });
+        Animation anim = new ScaleAnimation(
+                0.95f, 1f, // Start and end values for the X axis scaling
+                0.95f, 1f, // Start and end values for the Y axis scaling
+                Animation.RELATIVE_TO_SELF, 0.5f, // Pivot point of X scaling
+                Animation.RELATIVE_TO_SELF, 0.5f); // Pivot point of Y scaling
+        anim.setFillAfter(true); // Needed to keep the result of the animation
+        anim.setDuration(2000);
+        anim.setRepeatMode(Animation.INFINITE);
+        anim.setRepeatCount(Animation.INFINITE);
+        imageView.startAnimation(anim);
+    }
+        else if (names.get(position).toString().equals("SCHEDULER")) {
             imageView.setImageResource(R.drawable.ic_date_range_black_24dp);
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
